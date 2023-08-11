@@ -462,7 +462,7 @@ def main(_):
           num_readers=FLAGS.num_readers,
           common_queue_capacity=20 * FLAGS.batch_size,
           common_queue_min=10 * FLAGS.batch_size)
-      [image, label, bbox] = provider.get(['image', 'label', 'bbox'])
+      [image, label, bbox] = provider.get(['image', 'label', 'object/bbox'])
       label -= FLAGS.labels_offset
 
       train_image_size = FLAGS.train_image_size or network_fn.default_image_size
